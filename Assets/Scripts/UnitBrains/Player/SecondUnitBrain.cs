@@ -20,21 +20,14 @@ namespace UnitBrains.Player
             if (_overheated)
             {
                 return;
-            }
-            IncreaseTemperature();
-
+            }            
             int ProjectileCount = GetTemperature();
-
             for (int i = 0; i < ProjectileCount; i++)
             {
                 var projectile = CreateProjectile(forTarget);
                 AddProjectileToList(projectile, intoList);
             }
-           
-            
-          
-           
-            
+            IncreaseTemperature();
         }
 
         public override Vector2Int GetNextStep()
